@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auth Debug Logger Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔐 Auth Debug Logger</h1>
+      <div class="status">
+        <span id="connection-status" class="status-indicator">● Disconnected</span>
+        <button id="clear-logs" class="btn btn-secondary">Clear Display</button>
+        <button id="export-logs" class="btn btn-primary">Export Logs</button>
+      </div>
+    </header>
+
+    <div class="filters">
+      <div class="filter-group">
+        <label>Service:</label>
+        <select id="service-filter">
+          <option value="">All Services</option>
+          <option value="google-auth">Google</option>
+          <option value="stripe-api">Stripe</option>
+          <option value="twitter-auth">Twitter</option>
+          <option value="facebook-auth">Facebook</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Status:</label>
+        <select id="status-filter">
+          <option value="">All Status</option>
+          <option value="2xx">Success (2xx)</option>
+          <option value="3xx">Redirect (3xx)</option>
+          <option value="4xx">Client Error (4xx)</option>
+          <option value="5xx">Server Error (5xx)</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Search:</label>
+        <input type="text" id="search-filter" placeholder="Search in URL or body...">
+      </div>
+    </div>
+
+    <div class="logs-container">
+      <div id="logs-list" class="logs-list">
+        <div class="empty-state">
+          <p>No authentication logs yet.</p>
+          <p class="hint">Configure your app to use proxy:</p>
+          <code>HTTP_PROXY=http://localhost:8888</code>
+        </div>
+      </div>
+    </div>
+
+    <div id="log-detail" class="log-detail hidden">
+      <div class="detail-header">
+        <h2>Request Details</h2>
+        <button class="close-btn" onclick="closeDetail()">×</button>
+      </div>
+      <div id="detail-content" class="detail-content"></div>
+    </div>
+  </div>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

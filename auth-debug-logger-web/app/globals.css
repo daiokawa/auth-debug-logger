@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8f9fa;
+  --foreground: #212529;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.status-indicator.connected {
+  color: #28a745;
+}
+
+.status-indicator.disconnected {
+  color: #dc3545;
+}
+
+.log-entry {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.log-entry:hover {
+  background-color: #f1f3f5;
+}
+
+.log-entry.error {
+  border-left: 4px solid #dc3545;
+}
+
+.log-entry.success {
+  border-left: 4px solid #28a745;
+}
+
+.tag {
+  padding: 0.125rem 0.5rem;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: #495057;
+}
+
+.log-status {
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.log-status.status-2xx {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.log-status.status-3xx {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.log-status.status-4xx {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.log-status.status-5xx {
+  background-color: #f8d7da;
+  color: #721c24;
+}

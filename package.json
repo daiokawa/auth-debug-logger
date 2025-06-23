@@ -1,0 +1,67 @@
+{
+  "name": "auth-debug-logger",
+  "version": "1.0.0",
+  "description": "Universal authentication debugging logger for Google, Stripe, and other OAuth/API services",
+  "main": "dist/index.js",
+  "bin": {
+    "auth-debug-logger": "./dist/cli.js",
+    "adl": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc && npm run postbuild",
+    "postbuild": "chmod +x dist/cli.js",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "authentication",
+    "debugging",
+    "oauth",
+    "stripe",
+    "google",
+    "api",
+    "logger",
+    "proxy"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/auth-debug-logger.git"
+  },
+  "homepage": "https://github.com/yourusername/auth-debug-logger#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/auth-debug-logger/issues"
+  },
+  "files": [
+    "dist",
+    "public",
+    ".env.example",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "winston": "^3.11.0",
+    "socket.io": "^4.6.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "commander": "^11.1.0",
+    "chalk": "^5.3.0",
+    "open": "^9.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "@types/cors": "^2.8.17",
+    "typescript": "^5.3.0",
+    "tsx": "^4.6.0",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
