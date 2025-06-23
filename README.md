@@ -2,6 +2,8 @@
 
 A universal authentication debugging tool for Google, Stripe, X (Twitter), and other OAuth/API services. Never open developer consoles again!
 
+**English** | [日本語](README.ja.md)
+
 ## 🚀 Quick Deploy (For Everyone!)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/daiokawa/auth-debug-logger&project-name=my-auth-debug-logger&repository-name=my-auth-debug-logger)

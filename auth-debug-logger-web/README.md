@@ -2,6 +2,8 @@
 
 A real-time debugging tool for monitoring authentication flows from OAuth providers and API services. Perfect for developers who need to debug authentication issues in production or development environments.
 
+**English** | [日本語](README.ja.md)
+
 🚀 **Live Demo**: [https://auth-debug-logger.vercel.app](https://auth-debug-logger.vercel.app)
 
 ## Why Auth Debug Logger?
